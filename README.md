@@ -26,12 +26,12 @@ As an example of this we have the D key. where pressing d with Caps Lock active 
 |Visual Inline |this is useful for making selections of entire paragraphs, it is activated from Normal mode with V|
 |Visual Block  |this is useful for making Text Block selections, it is activated from Normal mode with Ctrl + v|
 |Replace			 |as its name indicates, it is to replace the text, it is activated from the normal mode with R or by pressing the Insert key from the insertion mode|
-|              |                                                                                             |                                                                                                                                
+                                                                                                                                
 ### Movement / Displacement
 
 |         |     |
 |---------|-----|
-| h       |allows us to move to the left. we encode the amount of characters that we will move with numbers example **4h** will move us 4 positions to the left |
+| <kbd>h</kbd> |allows us to move to the left. we encode the amount of characters that we will move with numbers example **4h** will move us 4 positions to the left |
 | j 			|it would be the same as with **h** but moving down |
 | k 			|we'll move up |
 | l 			|we'll move to the right|
@@ -58,6 +58,4 @@ As an example of this we have the D key. where pressing d with Caps Lock active 
 | {       |moves us one paragraph Up   |
 | }	      |moves us one paragraph Down |
 
-
-|         | |
 
