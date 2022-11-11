@@ -1,8 +1,7 @@
 # Vim VsCode Cheats Sheet
 
-
 ## Introduction
----------------
+
 In this document, I'll share my Vim learnings for the **[VS. Code](https://code.visualstudio.com)**, as well as any tips I find useful about that tool or extension.
 
 Also remember to check the official documentation [VSCodeVim](https://github.com/VSCodeVim/Vim)
