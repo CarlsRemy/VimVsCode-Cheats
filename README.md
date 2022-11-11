@@ -13,7 +13,7 @@ Also remember to check the official documentation [VSCodeVim](https://github.com
 
 ## First advice or clarification
 
-Las letras cambian su funcionamiento según sean mayúsculas o minúsculas. Al usar Mayúsculas le indicamos a vim que no agregaremos ningún modificador al operador (tecla presionada), de lo contrario con minúsculas esperará un segundo e incluso un tercer parámetro para su ejecución.
+The letters change their behavior depending on whether they are uppercase or lowercase. By using Shift we tell vim not to add any modifiers to the operator (key pressed), otherwise with lower case it will wait for a second and even a third parameter for its execution.
 
 As an example of this we have the D key. where pressing d with Caps Lock active or pressing the d key and Shift will cut the text from the pointer position to the end of the line, where doing it with lowercase d will do nothing until a second press of the same key is passed a modifier (w of word, s sentence, p of paragraph among others)
 
