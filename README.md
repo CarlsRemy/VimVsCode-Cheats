@@ -88,7 +88,7 @@ these do not change their function when changing from lowercase to uppercase, th
 | <kbd>y</kbd>   |copy without cutting the text  
 | <kbd>p</kbd>   |paste the copied text 
 | <kbd>~</kbd>   |change a character from uppercase to lowercase and vice versa. only accepts numeric modifiers   
-| <kbd>g</kbd>**+**<kbd>~</kbd>**+**<kbd>~</kbd>|is similar to ***~*** but this will do the whole line instead
+| <kbd>g</kbd> <kbd>~</kbd>|is similar to ***~*** but this will do the whole line instead
 | <kbd>g</kbd>+<kbd>u</kbd>+<kbd>u</kbd>|change the entire line to lowercase 
 | <kbd>g</kbd>+<kbd>U</kbd>+<kbd>U</kbd>|change the entire line to uppercase
 | <kbd>u</kbd>   |undo last change. only accepts numeric modifiers 
