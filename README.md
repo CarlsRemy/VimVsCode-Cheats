@@ -16,6 +16,9 @@ Also remember to check the official documentation [VSCodeVim](https://github.com
 The letters change their behavior depending on whether they are uppercase or lowercase. By using <kbd>Shift</kbd> we tell vim not to add any modifiers to the [Operator](#Operators), otherwise with lower case it will wait for a second and even a third parameter for its execution.
 
 As an example of this we have the <kbd>D</kbd> key. where pressing d with <kbd>Caps Lock</kbd> active or pressing the <kbd>d</kbd> key and <kbd>Shift</kbd> will cut the text from the pointer position to the end of the line, where doing it with lowercase d will do nothing until a second press of the same key is passed a modifier (<kbd>w</kbd> of word, <kbd>s</kbd> sentence, <kbd>p</kbd> of paragraph among others)
+
+
+If yours is not so much theory but practice, you can visit these websites and learn in a more interactive way: [Vim Snake](https://vimsnake.com/), [Vim Adventures](https://vim-adventures.com/), [Vim Genius](http://www.vimgenius.com/lessons)
 ### Modes
 
 |              |                                                                                             |
@@ -53,8 +56,11 @@ As an example of this we have the <kbd>D</kbd> key. where pressing d with <kbd>C
 | <kbd>-</kbd>  |moves up positioning it self in the first character that is **non-blank**|
 | <kbd>+</kbd>  |moves down to the first **non-blank** character
 | <kbd>w</kbd>  |moves to the first letter of each word, from right to the left and when finished go down to the next line|
-| <kbd>b</kbd>  |moves to the first letter of each word, from left to right and when finished go up to the previous line  |
-| <kbd>e</kbd>  |moves to the last letter of each word, from right to the left and when finished go down to the next line |
+| <kbd>W</kbd>  |moves to the first letter of each word, from right to the left and when finished go down to the next line  (skip special characters)|
+| <kbd>b</kbd>  |moves to the first letter of each word, from right to left and when it finishes it goes up to the previous line. the symbols are taken as separate words.  |
+| <kbd>B</kbd>  |moves to the first letter of each word, from right to left and when it finishes it goes up to the previous line. the symbols are taken as part of the words.  |
+| <kbd>e</kbd>  |moves to the last letter of each word, from  left to right the  and when finished go down to the next line. the symbols are taken as separate words. |
+| <kbd>E</kbd>  |moves to the last letter of each word, from  left to right the  and when finished go down to the next line. the symbols are taken as part of the words. |
 | <kbd>g</kbd>+<kbd>e</kbd> |moves to the last letter of each word, from left to right and when finished go up to the previous line   |
 | <kbd>(</kbd>  |moves to the next sentence|
 | <kbd>)</kbd>	|moves to the previous sentence|
@@ -75,19 +81,24 @@ operators support numeric values, [moves](#movement--displacement) such as k,w a
 these do not change their function when changing from lowercase to uppercase, they only stop admitting modifiers at the end of them.
 
 
-|                 .|     |
-|----------------|-----|
-| <kbd>c</kbd>   |cuts a line, but does not delete it. after this we will return to insert mode.
-| <kbd>d</kbd>   |performs the same function as <kbd>c</kbd> but without changing modes
-| <kbd>s</kbd>   |cut character and return to insert mode. only accepts numeric modifiers
-| <kbd>S</kbd>   |cut line and return to insert mode. only accepts numeric modifiers
+|                |        |
+|----------------|--------|
+| <kbd>c</kbd>  |cuts a line, but does not delete it. after this we will return to insert mode. |
+| <kbd>d</kbd>   |performs the same function as <kbd>c</kbd> but without changing modes |
+| <kbd>s</kbd>   |cut character and return to insert mode. only accepts numeric modifiers |
+| <kbd>S</kbd>   |cut line and return to insert mode. only accepts numeric modifiers |
 | <kbd>x</kbd>   |cut character below the cursor. only accepts numeric modifiers
 | <kbd>X</kbd>   |cut character before cursor. only accepts numeric modifiers
-| <kbd>o</kbd>   |inserts a blank line after the line where the cursor is positioned and returns to insert mode. only accepts numeric modifiers  
-| <kbd>O</kbd>   |inserts a blank line before the line where the cursor is positioned and returns to insert mode. only accepts numeric modifiers  
-| <kbd>y</kbd>   |copy without cutting the text  
-| <kbd>p</kbd>   |paste the copied text 
-| <kbd>~</kbd>   |change a character from uppercase to lowercase and vice versa. only accepts numeric modifiers   
+| <kbd>o</kbd>   | inserts a blank line after the line where the cursor is positioned and returns to insert mode. only accepts numeric modifiers  |
+| <kbd>O</kbd>   |inserts a blank line before the line where the cursor is positioned and returns to insert mode. only accepts numeric modifiers  |
+| <kbd>y</kbd> <kbd>y</kbd>   | copy line  |
+| <kbd>y</kbd> <kbd>w</kbd>   | copy word  |
+| <kbd>p</kbd>   | paste the copied text  |
+| <kbd>~</kbd>   |change a character from uppercase to lowercase and vice versa. only accepts numeric modifiers |
+|  <kbd>"</kbd>+<kbd>0</kbd>+<kbd>y</kbd>+<kbd>y</kbd> | copy and save with name "0" in the register. to see the log read the [**:reg command**](#commands)|
+|  <kbd>"</kbd>+<kbd>0</kbd>+<kbd>p</kbd> | Paste from 0 register. to see the log read the [**:reg command**](#commands)|
+|  <kbd>2</kbd>+<kbd>p</kbd> | paste the copied text twice
+
 | <kbd>g</kbd> + 2 <kbd>~</kbd> |is similar to ***~*** but this will do the whole line instead. it must be pressed twice ~, I mean **g~~**
 | <kbd>g</kbd>+<kbd>u</kbd>+<kbd>u</kbd>|change the entire line to lowercase 
 | <kbd>g</kbd>+<kbd>U</kbd>+<kbd>U</kbd>|change the entire line to uppercase
@@ -181,13 +192,15 @@ the commands in vim begin with ":" followers of the sentence to be executed, the
 |                |     |
 |----------------|-----|
 | :e[dit]        |create or edit file. we must indicate the file after said command example ***:e main.js***
+| :reg[istro]    |show log of whatever is copied with vim (it's different from trash )
 | :w[rite]       |save a file
 | :q[uit]        |close file. it will give an error if it finds unsaved changes
 | :q!            |! at the end of the command causes the same to close discarding any unsaved changes
+| :x             |close and save changes
 | :wq            |close and save changes
 | :wa[ll]        |save changes to all files
 | :qa[ll]        |close all files
-| :tabnew        |open file in new tab
+| :tabnew        |open file in new tab:v
 | :tabn[ext]     |move to the next tab
 | :tabp[revious] |move to the previous tab
 | :tabm[over]    |allows us to change the position of the tab, it goes from index 0
@@ -226,6 +239,7 @@ these are written towards ***:.,2d*** where <kbd>d</kbd> is an [operator](#opera
 
 |                |     |
 |----------------|-----|
+| <kbd>Z</kbd> <kbd>Z</kbd>   |close and save changes
 | <kbd>i</kbd>   |return to insert mode place the cursor one character before the previous position
 | <kbd>I</kbd>   |return to insert mode place cursor on first character
 | <kbd>a</kbd>   |return to insert mode place cursor on last character
@@ -233,4 +247,16 @@ these are written towards ***:.,2d*** where <kbd>d</kbd> is an [operator](#opera
 | <kbd>e</kbd> <kbd>a</kbd> |will return to insert mode by placing the cursor on the last letter of the word in which we were positioned |
 | <kbd>g</kbd>+<kbd>d</kbd> |go to the definition of the word under the cursor |
 
+
+### Macro
+
+Macros in Vim are used to store a series of commands that perform an action and then be able to execute the same script over and over again without having to write the same thing every time.
+
+These are assigned a **one-letter** name.
+
+|                |     |
+|----------------|-----|
+| <kbd>q</kbd> <kbd>a</kbd>   | to start recording, a macro with the name **"a"** |
+| <kbd>q</kbd>    | Stop recording macro |
+| <kbd>@</kbd> <kbd>a</kbd> | play **"a"** macro |
 
