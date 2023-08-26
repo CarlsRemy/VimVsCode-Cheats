@@ -32,9 +32,8 @@ If yours is not so much theory but practice, you can visit these websites and le
                                                                                                                                 
 ### Movement / Displacement
 
-
-|         |     |
-|---------|-----|
+|             |     |
+|-------------|-----|
 | <kbd>h</kbd>  |allows us to move to the left. we encode the amount of characters that we will move with numbers example **<kbd>4</kbd> + <kbd>h</kbd>** will move us 4 positions to the left |
 | <kbd>j</kbd>	|it would be the same as with **<kbd>h</kbd>** but moving down |
 | <kbd>k</kbd>	|we'll move up |
@@ -51,26 +50,25 @@ If yours is not so much theory but practice, you can visit these websites and le
 | <kbd>0</kbd>  |moves to the first character of a line, of the line we are on|
 | <kbd>^</kbd>  |moves to the first character of a **non-blank** line, of the line we are on
 | <kbd>$</kbd>  |moves to the last character of a line, of the line we are on|
-| <kbd>_</kbd>  |moves to the last character of a line, of the line we are on|
-| <kbd>g</kbd>+<kbd>_</kbd> |moves to the last character of a **non-blank** line, of the line we are on|
-| <kbd>-</kbd>  |moves up positioning it self in the first character that is **non-blank**|
-| <kbd>+</kbd>  |moves down to the first **non-blank** character
-| <kbd>w</kbd>  |moves to the first letter of each word, from right to the left and when finished go down to the next line|
-| <kbd>W</kbd>  |moves to the first letter of each word, from right to the left and when finished go down to the next line  (skip special characters)|
+| <kbd>_</kbd>  |moves to the first character of a line, of the line we are on |
+| <kbd>g</kbd>+<kbd>_</kbd> |moves to the last character of a **non-blank** line, of the line we are on |
+| <kbd>-</kbd>  |moves up positioning it self in the first character that is **non-blank** |
+| <kbd>+</kbd>  |moves down to the first **non-blank** character|
+| <kbd>w</kbd>  |moves to the first letter of each word, from right to the left and when finished go down to the next line |
+| <kbd>W</kbd>  |moves to the first letter of each word, from right to the left and when finished go down to the next line  (skip special characters) |
 | <kbd>b</kbd>  |moves to the first letter of each word, from right to left and when it finishes it goes up to the previous line. the symbols are taken as separate words.  |
 | <kbd>B</kbd>  |moves to the first letter of each word, from right to left and when it finishes it goes up to the previous line. the symbols are taken as part of the words.  |
 | <kbd>e</kbd>  |moves to the last letter of each word, from  left to right the  and when finished go down to the next line. the symbols are taken as separate words. |
 | <kbd>E</kbd>  |moves to the last letter of each word, from  left to right the  and when finished go down to the next line. the symbols are taken as part of the words. |
 | <kbd>g</kbd>+<kbd>e</kbd> |moves to the last letter of each word, from left to right and when finished go up to the previous line   |
-| <kbd>(</kbd>  |moves to the next sentence|
+| <kbd>(</kbd>  |moves to the next sentence |
 | <kbd>)</kbd>	|moves to the previous sentence|
 | <kbd>{</kbd>  |moves us one paragraph Up   |
 | <kbd>}</kbd>	|moves us one paragraph Down |
 | <kbd>%</kbd>  |it moves between the start and end blocks of {},[], () |
-| <kbd>z</kbd>+<kbd>z</kbd> |scroll the line with the cursor to the center of the screen
-| <kbd>z</kbd>+<kbd>t</kbd> |scroll the line with the cursor to the top
-| <kbd>z</kbd>+<kbd>b</kbd> |scroll the line with the cursor to the bottom
-
+| <kbd>z</kbd>+<kbd>z</kbd> |scroll the line with the cursor to the center of the screen |
+| <kbd>z</kbd>+<kbd>t</kbd> |scroll the line with the cursor to the top |
+| <kbd>z</kbd>+<kbd>b</kbd> |scroll the line with the cursor to the bottom |
 
 
 ### Operators 
@@ -239,7 +237,7 @@ these are written towards ***:.,2d*** where <kbd>d</kbd> is an [operator](#opera
 
 |                |     |
 |----------------|-----|
-| <kbd>Z</kbd> <kbd>Z</kbd>   |close and save changes
+| <kbd>Z</kbd> <kbd>Z</kbd>   |close and save changes |
 | <kbd>i</kbd>   |return to insert mode place the cursor one character before the previous position
 | <kbd>I</kbd>   |return to insert mode place cursor on first character
 | <kbd>a</kbd>   |return to insert mode place cursor on last character
