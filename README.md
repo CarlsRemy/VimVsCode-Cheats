@@ -38,17 +38,17 @@ I also recommend this **[free Vim course](https://www.udemy.com/course/vim-aumen
 |               |     |
 |---------------|-----|
 | <kbd>h</kbd>  | allows us to move to the left. we encode the amount of characters that we will move with numbers |
-| <kbd>4</kbd> + <kbd>h</kbd> | will move us 4 positions to the left |
+| <kbd>4</kbd> <kbd>h</kbd> | will move us 4 positions to the left |
 | <kbd>j</kbd>	| it would be the same as with **<kbd>h</kbd>** but moving down |
 | <kbd>k</kbd>	| we'll move up |
 | <kbd>l</kbd> 	| we'll move to the right |
-| <kbd>g</kbd>+<kbd>j</kbd> | this would be the same as **<kbd>j</kbd>** |
-| <kbd>g</kbd>+<kbd>k</kbd>	| this would be the same as **<kbd>k</kbd>** |
-| <kbd>g</kbd>+<kbd>g</kbd> | we move to the first line, but we can also modify the line we go to |
-| <kbd>8</kbd>+<kbd>G</kbd> | positions us on line 8, if it does not exist it directs us to the last line |
+| <kbd>g</kbd> <kbd>j</kbd> | this would be the same as **<kbd>j</kbd>** |
+| <kbd>g</kbd> <kbd>k</kbd>	| this would be the same as **<kbd>k</kbd>** |
+| <kbd>g</kbd> <kbd>g</kbd> | we move to the first line, but we can also modify the line we go to |
+| <kbd>8</kbd> <kbd>G</kbd> | positions us on line 8, if it does not exist it directs us to the last line |
 | <kbd>G</kbd> | it moves us to the last line, if it allows a numeric modifier |
-| <kbd>[</kbd>+<kbd>[</kbd> | we move to the first line. does not allow numeric modifier |
-| <kbd>]</kbd>+<kbd>]</kbd> | we move to the  last line. does not allow numeric modifier |
+| <kbd>[</kbd> <kbd>[</kbd> | we move to the first line. does not allow numeric modifier |
+| <kbd>]</kbd> <kbd>]</kbd> | we move to the  last line. does not allow numeric modifier |
 | <kbd>H</kbd>  | we scroll to the visible top of the screen, it would be the same as pressing the **<kbd>Page Up</kbd>** key |
 | <kbd>M</kbd>  | we move to the visible central part of the screen |
 | <kbd>L</kbd>  | we scroll to the visible bottom of the screen, it would be the same as pressing the **<kbd>Page Down</kbd>** key |
@@ -56,7 +56,7 @@ I also recommend this **[free Vim course](https://www.udemy.com/course/vim-aumen
 | <kbd>^</kbd>  | moves to the first character of a **non-blank** line, of the line we are on |
 | <kbd>$</kbd>  | moves to the last charcacter of a line, of the line we are on |
 | <kbd>_</kbd>  | moves to the first character of a line, of the line we are on |
-| <kbd>g</kbd>+<kbd>_</kbd> | moves to the last character of a **non-blank** line, of the line we are on |
+| <kbd>g</kbd> <kbd>_</kbd> | moves to the last character of a **non-blank** line, of the line we are on |
 | <kbd>-</kbd>  | moves up positioning it self in the first character that is **non-blank** |
 | <kbd>+</kbd>  | moves down to the first **non-blank** character |
 | <kbd>w</kbd>  | moves to the first letter of each word, from right to the left and when finished go down to the next line |
@@ -65,18 +65,19 @@ I also recommend this **[free Vim course](https://www.udemy.com/course/vim-aumen
 | <kbd>B</kbd>  | moves to the first letter of each word, from right to left and when it finishes it goes up to the previous line. the symbols are taken as part of the words.  |
 | <kbd>e</kbd>  | moves to the last letter of each word, from  left to right the  and when finished go down to the next line. the symbols are taken as separate words. |
 | <kbd>E</kbd>  | moves to the last letter of each word, from  left to right the  and when finished go down to the next line. the symbols are taken as part of the words. |
-| <kbd>g</kbd>+<kbd>e</kbd> | moves to the last letter of each word, from left to right and when finished go up to the previous line   |
-| <kbd>g</kbd>+<kbd>f</kbd> | will open the file that has the name of the word under the cursor. If it does not exist, the process of creating a new file will be done. |
-| <kbd>Ctrl</kbd>+<kbd>o</kbd> | jump to previous location where the cursor has recently been |
-| <kbd>Ctrl</kbd>+<kbd>i</kbd> | jumps to the next previous location where the cursor has recently been |
+| <kbd>g</kbd> <kbd>b</kbd> | select the word under the cushion and perform a similarity search, and introduce us in visual mode|
+| <kbd>g</kbd> <kbd>e</kbd> | moves to the last letter of each word, from left to right and when finished go up to the previous line   |
+| <kbd>g</kbd> <kbd>f</kbd> | will open the file that has the name of the word under the cursor. If it does not exist, the process of creating a new file will be done. |
+| <kbd>Ctrl</kbd> <kbd>o</kbd>  | jump to previous location where the cursor has recently been |
+| <kbd>Ctrl</kbd> <kbd>i</kbd>  | jumps to the next previous location where the cursor has recently been |
 | <kbd>(</kbd>  | moves to the next sentence |
 | <kbd>)</kbd>	| moves to the previous sentence |
 | <kbd>{</kbd>  | moves us one paragraph Up   |
 | <kbd>}</kbd>	| moves us one paragraph Down |
 | <kbd>%</kbd>  | it moves between the start and end blocks of {},[], () |
-| <kbd>z</kbd>+<kbd>z</kbd> | scroll the line with the cursor to the center of the screen |
-| <kbd>z</kbd>+<kbd>t</kbd> | scroll the line with the cursor to the top |
-| <kbd>z</kbd>+<kbd>b</kbd> | scroll the line with the cursor to the bottom |
+| <kbd>z</kbd> <kbd>z</kbd> | scroll the line with the cursor to the center of the screen |
+| <kbd>z</kbd> <kbd>t</kbd> | scroll the line with the cursor to the top |
+| <kbd>z</kbd> <kbd>b</kbd> | scroll the line with the cursor to the bottom |
 
 ### Operators 
 
@@ -102,31 +103,31 @@ these do not change their function when changing from lowercase to uppercase, th
 | <kbd>y</kbd> <kbd>w</kbd>   | copy word  |
 | <kbd>p</kbd>   | paste the copied text  |
 | <kbd>~</kbd>   | change a character from uppercase to lowercase and vice versa. only accepts numeric modifiers |
-| <kbd>"</kbd>+<kbd>0</kbd>+<kbd>Y</kbd> | copy and save with name "0" in the register. to see the log read the [**:reg command**](#commands) |
-| <kbd>"</kbd>+<kbd>0</kbd>+<kbd>p</kbd> | Paste from 0 register. to see the log read the [**:reg command**](#commands) |
-| <kbd>2</kbd>+<kbd>p</kbd> | paste the copied text twice |
-| <kbd>g</kbd> + 2 <kbd>~</kbd> | is similar to ~ but this will do the whole line instead. it must be pressed twice ~, I mean **g~~** |
-| <kbd>g</kbd>+<kbd>u</kbd>+<kbd>u</kbd> | change the entire line to lowercase |
-| <kbd>g</kbd>+<kbd>U</kbd>+<kbd>U</kbd> | change the entire line to uppercase |
+| <kbd>"</kbd> <kbd>0</kbd> <kbd>Y</kbd> | copy and save with name "0" in the register. to see the log read the [**:reg command**](#commands) |
+| <kbd>"</kbd> <kbd>0</kbd> <kbd>p</kbd> | Paste from 0 register. to see the log read the [**:reg command**](#commands) |
+| <kbd>2</kbd> <kbd>p</kbd> | paste the copied text twice |
+| <kbd>g</kbd> <kbd>~</kbd> <kbd>~</kbd> | is similar to ~ but this will do the whole line instead |
+| <kbd>g</kbd> <kbd>u</kbd> <kbd>u</kbd> | change the entire line to lowercase |
+| <kbd>g</kbd> <kbd>U</kbd> <kbd>U</kbd> | change the entire line to uppercase |
 | <kbd>u</kbd> | undo last change. only accepts numeric modifiers |
 | <kbd>r</kbd> | redo the last change. only accepts numerical modifiers |
 | <kbd>.</kbd> | repeat last action. only accepts numeric modifiers |
-| <kbd>></kbd>+<kbd>></kbd> | tabulate the text. we can indicate the number of lines to affect|
-| <kbd>2</kbd>+<kbd>></kbd>+<kbd>></kbd> | will tabulate the text affecting 2 lines |
-| <kbd>></kbd>+<kbd>2</kbd>+<kbd>></kbd> | will tabulate the text affecting 2 lines |
-| <kbd><</kbd>+<kbd><</kbd> | will remove a tab from the text |
-| <kbd>g</kbd>+<kbd>p</kbd> | paste after cursor  |
-| <kbd>g</kbd>+<kbd>P</kbd> | paste before cursor |
-| <kbd>g</kbd>+<kbd>c</kbd>+<kbd>c</kbd> | make a comment in line. if it is commented, it will eliminate the comment indicators, leaving the text of this |
-| <kbd>g</kbd>+<kbd>C</kbd>+<kbd>C</kbd> | make a comment in blocks. if it is commented, it will eliminate the comment indicators, leaving the text of this |
-| <kbd>g</kbd>+<kbd>c</kbd>+<kbd>-</kbd> | comments from the current line up. we can indicate how many lines up we want to affect |
-| <kbd>g</kbd>+<kbd>C</kbd>+<kbd>2</kbd>+<kbd>-</kbd> | here we indicate that we want to affect 2 lines |
-| <kbd>g</kbd>+<kbd>c</kbd>+<kbd>+</kbd> | It is very similar to the previous sentence but this one comments from the current line downwards. |
+| <kbd>></kbd> <kbd>></kbd> | tabulate the text. we can indicate the number of lines to affect|
+| <kbd>2</kbd> <kbd>></kbd> <kbd>></kbd> | will tabulate the text affecting 2 lines |
+| <kbd>></kbd> <kbd>2</kbd> <kbd>></kbd> | will tabulate the text affecting 2 lines |
+| <kbd><</kbd> <kbd><</kbd> | will remove a tab from the text |
+| <kbd>g</kbd> <kbd>p</kbd> | paste after cursor  |
+| <kbd>g</kbd> <kbd>P</kbd> | paste before cursor |
+| <kbd>g</kbd> <kbd>c</kbd> <kbd>c</kbd> | make a comment in line. if it is commented, it will eliminate the comment indicators, leaving the text of this |
+| <kbd>g</kbd> <kbd>C</kbd> <kbd>C</kbd> | make a comment in blocks. if it is commented, it will eliminate the comment indicators, leaving the text of this |
+| <kbd>g</kbd> <kbd>c</kbd> <kbd>-</kbd> | comments from the current line up. we can indicate how many lines up we want to affect |
+| <kbd>g</kbd> <kbd>C</kbd> <kbd>2</kbd> <kbd>-</kbd> | here we indicate that we want to affect 2 lines |
+| <kbd>g</kbd> <kbd>c</kbd> <kbd>+</kbd> | It is very similar to the previous sentence but this one comments from the current line downwards. |
 | <kbd>J</kbd> | join the line where we are positioned with the line below with a space between both |
-| <kbd>g</kbd>+<kbd>J</kbd> | Similar to the previous statement only this one does not add any space |
-| <kbd>g</kbd>+<kbd>t</kbd> | allow us to move to the next tab. if we pass a numeric modifier to the tab that corresponds to the number we pass  |
-| <kbd>g</kbd>+<kbd>T</kbd> | allow us to move to the previous tab. If we pass a numeric modifier, it will move as many tabs back as we indicate. |
-| <kbd>2</kbd>+<kbd>g</kbd>+<kbd>T</kbd> | If we are in tab number 3, it will move us 2 tabs back, this positions us in the first |
+| <kbd>g</kbd> <kbd>J</kbd> | Similar to the previous statement only this one does not add any space |
+| <kbd>g</kbd> <kbd>t</kbd> | allow us to move to the next tab. if we pass a numeric modifier to the tab that corresponds to the number we pass  |
+| <kbd>g</kbd> <kbd>T</kbd> | allow us to move to the previous tab. If we pass a numeric modifier, it will move as many tabs back as we indicate. |
+| <kbd>2</kbd> <kbd>g</kbd> <kbd>T</kbd> | If we are in tab number 3, it will move us 2 tabs back, this positions us in the first |
 
 ### Modifiers
 
@@ -138,7 +139,7 @@ these do not change their function when changing from lowercase to uppercase, th
 | <kbd>p</kbd>   | represents the paragraphs   |
 | <kbd>b</kbd>   | represents the blocks of () |
 | <kbd>B</kbd>   | represents the blocks of {} |
-| <kbd>t</kbd>   | represents the tag blocks <>.for this to work we must indicate em modifier a or i before this since there is another modifier that works with the T, example: <kbd>c</kbd>+<kbd>a</kbd>+<kbd>t</kbd> cuts the content and the tag itself or text within <> |
+| <kbd>t</kbd>   | represents the tag blocks <>.for this to work we must indicate em modifier a or i before this since there is another modifier that works with the T, example: <kbd>c</kbd> <kbd>a</kbd> <kbd>t</kbd> cuts the content and the tag itself or text within <> |
 | <kbd>/</kbd>   | represents the text from the cursor position to the appearance of the search occurrence, if it is not found it will do nothing, <kbd>d</kbd> <kbd>/</kbd> ***fire*** will delete all the text found before the word fire |
 | <kbd>f</kbd>   | represents the text from to the position of the occurrence including itself, it searches for characters |
 | <kbd>F</kbd>   | it is similar to the previous sentence only that it looks for the previous occurrence |
@@ -160,13 +161,13 @@ these do not change their function when changing from lowercase to uppercase, th
 
 |                           |     |
 |---------------------------|-----|
-| <kbd>a</kbd>+<kbd>w</kbd> | select a word              |
-| <kbd>a</kbd>+<kbd>b</kbd> | select block of ()         |
-| <kbd>a</kbd>+<kbd>B</kbd> | select block of {}         |
-| <kbd>a</kbd>+<kbd>t</kbd> | select tag block <>        |
-| <kbd>i</kbd>+<kbd>b</kbd> | select text inside ()      |
-| <kbd>i</kbd>+<kbd>B</kbd> | select text inside {}      |
-| <kbd>i</kbd>+<kbd>t</kbd> | select text inside tags <> |
+| <kbd>a</kbd> <kbd>w</kbd> | select a word              |
+| <kbd>a</kbd> <kbd>b</kbd> | select block of ()         |
+| <kbd>a</kbd> <kbd>B</kbd> | select block of {}         |
+| <kbd>a</kbd> <kbd>t</kbd> | select tag block <>        |
+| <kbd>i</kbd> <kbd>b</kbd> | select text inside ()      |
+| <kbd>i</kbd> <kbd>B</kbd> | select text inside {}      |
+| <kbd>i</kbd> <kbd>t</kbd> | select text inside tags <> |
 | <kbd>o</kbd>              | moves the cursor between the last letter of the selection and the first | 
 
 ### Search
@@ -254,7 +255,7 @@ these are written towards ***:.,2d*** where <kbd>d</kbd> is an [operator](#opera
 | <kbd>a</kbd>   |return to insert mode place cursor on last character
 | <kbd>A</kbd>   |return to insert mode place the cursor one character after the previous position
 | <kbd>e</kbd> <kbd>a</kbd> |will return to insert mode by placing the cursor on the last letter of the word in which we were positioned |
-| <kbd>g</kbd>+<kbd>d</kbd> |go to the definition of the word under the cursor |
+| <kbd>g</kbd> <kbd>d</kbd> |go to the definition of the word under the cursor |
 
 
 ### Macro
