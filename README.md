@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this document, I'll share my Vim learnings for the **[VS. Code](https://code.visualstudio.com)**, as well as any tips I find useful about that tool or extension.
+In this document, I'll share my Vim learnings for the **[VS. Code](https://code.visualstudio.com "Visual Studio Code")**, as well as any tips I find useful about that tool or extension.
 
-Also remember to check the official documentation [VSCodeVim](https://github.com/VSCodeVim/Vim)
+Also remember to check the official documentation [VSCodeVim](https://github.com/VSCodeVim/Vim "VSCode Vim") or the next page to understand vim better [Vim Tips](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/moving-blazingly-fast-with-the-core-vim-motions/) 
 
 <p align="center" width="100%">
     <img width="40%" src="https://raw.githubusercontent.com/VSCodeVim/Vim/master/images/icon.png"> 
@@ -15,10 +15,13 @@ Also remember to check the official documentation [VSCodeVim](https://github.com
 
 The letters change their behavior depending on whether they are uppercase or lowercase. By using <kbd>Shift</kbd> we tell vim not to add any modifiers to the [Operator](#Operators), otherwise with lower case it will wait for a second and even a third parameter for its execution.
 
-As an example of this we have the <kbd>D</kbd> key. where pressing d with <kbd>Caps Lock</kbd> active or pressing the <kbd>d</kbd> key and <kbd>Shift</kbd> will cut the text from the pointer position to the end of the line, where doing it with lowercase d will do nothing until a second press of the same key is passed a modifier (<kbd>w</kbd> of word, <kbd>s</kbd> sentence, <kbd>p</kbd> of paragraph among others)
+As an example of this we have  <kbd>D</kbd>. where pressing <kbd>d</kbd> with <kbd>Caps Lock</kbd> active or pressing  <kbd>d</kbd> and <kbd>Shift</kbd> will cut the text from the pointer position to the end of the line, where doing it with lowercase <kbd>d</kbd> will do nothing until the same key is pressed a second time or a modifier is passed (<kbd>w</kbd> of word, <kbd>s</kbd> sentence, <kbd>p</kbd> of paragraph among others)
 
 
-If yours is not so much theory but practice, you can visit these websites and learn in a more interactive way: [Vim Snake](https://vimsnake.com/), [Vim Adventures](https://vim-adventures.com/), [Vim Genius](http://www.vimgenius.com/lessons)
+> [!TIP]  
+> If yours is not so much theory but practice, you can visit these websites and learn in a more interactive way: [Vim Snake](https://vimsnake.com/), [Vim Adventures](https://vim-adventures.com/), [Vim Genius](http://www.vimgenius.com/lessons).   
+I also recommend this **[free Vim course](https://www.udemy.com/course/vim-aumenta-tu-velocidad-de-desarrollo/ "Vim by Nicolas Schurmann")** taught on Udemy.
+
 ### Modes
 
 |              |         |
@@ -42,7 +45,7 @@ If yours is not so much theory but practice, you can visit these websites and le
 | <kbd>g</kbd>+<kbd>j</kbd> | this would be the same as **<kbd>j</kbd>** |
 | <kbd>g</kbd>+<kbd>k</kbd>	| this would be the same as **<kbd>k</kbd>** |
 | <kbd>g</kbd>+<kbd>g</kbd> | we move to the first line, but we can also modify the line we go to |
-| <kbd>8</kbd>+<kbd>g</kbd>+<kbd>g</kbd> | positions us on line 8, if it does not exist it directs us to the last line |
+| <kbd>8</kbd>+<kbd>G</kbd> | positions us on line 8, if it does not exist it directs us to the last line |
 | <kbd>G</kbd> | it moves us to the last line, if it allows a numeric modifier |
 | <kbd>[</kbd>+<kbd>[</kbd> | we move to the first line. does not allow numeric modifier |
 | <kbd>]</kbd>+<kbd>]</kbd> | we move to the  last line. does not allow numeric modifier |
@@ -51,7 +54,7 @@ If yours is not so much theory but practice, you can visit these websites and le
 | <kbd>L</kbd>  | we scroll to the visible bottom of the screen, it would be the same as pressing the **<kbd>Page Down</kbd>** key |
 | <kbd>0</kbd>  | moves to the first character of a line, of the line we are on |
 | <kbd>^</kbd>  | moves to the first character of a **non-blank** line, of the line we are on |
-| <kbd>$</kbd>  | moves to the last character of a line, of the line we are on |
+| <kbd>$</kbd>  | moves to the last charcacter of a line, of the line we are on |
 | <kbd>_</kbd>  | moves to the first character of a line, of the line we are on |
 | <kbd>g</kbd>+<kbd>_</kbd> | moves to the last character of a **non-blank** line, of the line we are on |
 | <kbd>-</kbd>  | moves up positioning it self in the first character that is **non-blank** |
@@ -63,6 +66,9 @@ If yours is not so much theory but practice, you can visit these websites and le
 | <kbd>e</kbd>  | moves to the last letter of each word, from  left to right the  and when finished go down to the next line. the symbols are taken as separate words. |
 | <kbd>E</kbd>  | moves to the last letter of each word, from  left to right the  and when finished go down to the next line. the symbols are taken as part of the words. |
 | <kbd>g</kbd>+<kbd>e</kbd> | moves to the last letter of each word, from left to right and when finished go up to the previous line   |
+| <kbd>g</kbd>+<kbd>f</kbd> | will open the file that has the name of the word under the cursor. If it does not exist, the process of creating a new file will be done. |
+| <kbd>Ctrl</kbd>+<kbd>o</kbd> | jump to previous location where the cursor has recently been |
+| <kbd>Ctrl</kbd>+<kbd>i</kbd> | jumps to the next previous location where the cursor has recently been |
 | <kbd>(</kbd>  | moves to the next sentence |
 | <kbd>)</kbd>	| moves to the previous sentence |
 | <kbd>{</kbd>  | moves us one paragraph Up   |
@@ -71,7 +77,6 @@ If yours is not so much theory but practice, you can visit these websites and le
 | <kbd>z</kbd>+<kbd>z</kbd> | scroll the line with the cursor to the center of the screen |
 | <kbd>z</kbd>+<kbd>t</kbd> | scroll the line with the cursor to the top |
 | <kbd>z</kbd>+<kbd>b</kbd> | scroll the line with the cursor to the bottom |
-
 
 ### Operators 
 
@@ -84,6 +89,8 @@ these do not change their function when changing from lowercase to uppercase, th
 |                |        |
 |----------------|--------|
 | <kbd>c</kbd>   | cuts a line, but does not delete it. after this we will return to insert mode. |
+| <kbd>c</kbd> <kbd>-</kbd>  | cut the line from the course to the next one above it, eliminating a line break.. after this we will return to insert mode.|
+| <kbd>c</kbd> <kbd>+</kbd>  | cut the line from the course to the next one below it, eliminating a line break.. after this we will return to insert mode. |
 | <kbd>d</kbd>   | performs the same function as <kbd>c</kbd> but without changing modes |
 | <kbd>s</kbd>   | cut character and return to insert mode. only accepts numeric modifiers |
 | <kbd>S</kbd>   | cut line and return to insert mode. only accepts numeric modifiers |
@@ -95,22 +102,23 @@ these do not change their function when changing from lowercase to uppercase, th
 | <kbd>y</kbd> <kbd>w</kbd>   | copy word  |
 | <kbd>p</kbd>   | paste the copied text  |
 | <kbd>~</kbd>   | change a character from uppercase to lowercase and vice versa. only accepts numeric modifiers |
-| <kbd>"</kbd>+<kbd>0</kbd>+<kbd>y</kbd>+<kbd>y</kbd> | copy and save with name "0" in the register. to see the log read the [**:reg command**](#commands) |
+| <kbd>"</kbd>+<kbd>0</kbd>+<kbd>Y</kbd> | copy and save with name "0" in the register. to see the log read the [**:reg command**](#commands) |
 | <kbd>"</kbd>+<kbd>0</kbd>+<kbd>p</kbd> | Paste from 0 register. to see the log read the [**:reg command**](#commands) |
 | <kbd>2</kbd>+<kbd>p</kbd> | paste the copied text twice |
 | <kbd>g</kbd> + 2 <kbd>~</kbd> | is similar to ~ but this will do the whole line instead. it must be pressed twice ~, I mean **g~~** |
 | <kbd>g</kbd>+<kbd>u</kbd>+<kbd>u</kbd> | change the entire line to lowercase |
 | <kbd>g</kbd>+<kbd>U</kbd>+<kbd>U</kbd> | change the entire line to uppercase |
 | <kbd>u</kbd> | undo last change. only accepts numeric modifiers |
+| <kbd>r</kbd> | redo the last change. only accepts numerical modifiers |
 | <kbd>.</kbd> | repeat last action. only accepts numeric modifiers |
-| <kbd>></kbd>+ <kbd>></kbd> | tabulate the text. we can indicate the number of lines to affect|
-| <kbd>2</kbd>+<kbd>></kbd>+ <kbd>></kbd> | will tabulate the text affecting 2 lines |
-| <kbd>></kbd>+ <kbd>2</kbd> + <kbd>></kbd> | will tabulate the text affecting 2 lines |
+| <kbd>></kbd>+<kbd>></kbd> | tabulate the text. we can indicate the number of lines to affect|
+| <kbd>2</kbd>+<kbd>></kbd>+<kbd>></kbd> | will tabulate the text affecting 2 lines |
+| <kbd>></kbd>+<kbd>2</kbd>+<kbd>></kbd> | will tabulate the text affecting 2 lines |
 | <kbd><</kbd>+<kbd><</kbd> | will remove a tab from the text |
 | <kbd>g</kbd>+<kbd>p</kbd> | paste after cursor  |
 | <kbd>g</kbd>+<kbd>P</kbd> | paste before cursor |
-| <kbd>g</kbd>+<kbd>c</kbd>+<kbd>c</kbd> | make a comment in line |
-| <kbd>g</kbd>+<kbd>C</kbd>+<kbd>C</kbd> | make a comment in blocks |
+| <kbd>g</kbd>+<kbd>c</kbd>+<kbd>c</kbd> | make a comment in line. if it is commented, it will eliminate the comment indicators, leaving the text of this |
+| <kbd>g</kbd>+<kbd>C</kbd>+<kbd>C</kbd> | make a comment in blocks. if it is commented, it will eliminate the comment indicators, leaving the text of this |
 | <kbd>g</kbd>+<kbd>c</kbd>+<kbd>-</kbd> | comments from the current line up. we can indicate how many lines up we want to affect |
 | <kbd>g</kbd>+<kbd>C</kbd>+<kbd>2</kbd>+<kbd>-</kbd> | here we indicate that we want to affect 2 lines |
 | <kbd>g</kbd>+<kbd>c</kbd>+<kbd>+</kbd> | It is very similar to the previous sentence but this one comments from the current line downwards. |
@@ -260,4 +268,3 @@ These are assigned a **one-letter** name.
 | <kbd>q</kbd> <kbd>a</kbd>   | to start recording, a macro with the name **"a"** |
 | <kbd>q</kbd>    | Stop recording macro |
 | <kbd>@</kbd> <kbd>a</kbd> | play **"a"** macro |
-
